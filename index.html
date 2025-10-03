@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my profile</title>
+    <title>itf simple bank</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <div class="text-3xl bg-red-500">hello</div>
+    <div class="flex justify-between bg-blue-500 text-white">
+        <div class="text-2xl">
+            68070180
+        </div>
+        <div class="text-4xl">
+            ITF WEBSITE
+        </div>
+        <div class="text-2xl">
+            Week14
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+        <div class="flex gap-8 items-center mt-12">
+            <img src="R.jpg" width="200" height="200">
+            <div class="flex flex-col">
+                <div class="div">ITF SIMPLE BANK</div>
+                <div class="div">WElcome to my First HTML + CSS + JS websote!</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-24">
+
+            <div class="flex gap-8 mt-8">
+                <div class="div">
+                    <div class="text-3xl font-bold ">Account Overeview</div>
+                    <img src="R.jpg" width="200" height="200">
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    Account information
+                    <div class="div">Name : Sontud Choakitiwut
+                        <div class="div">Type : Savings Account</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex gap-8 mt-8">
+                <div class="div">
+                    <div class="text-3xl font-bold">Financial Tools</div>
+                    <img src="R.jpg" width="200" height="200">
+                </div>
+                <div class="flex flex-col justify-center">
+                    Currency Converter
+                    <div class="flex flex-col gap-4">
+                        <div class="div">input balnace:<input type="text" id="input" name="fname" class="bg-gray-300">
+                        </div>
+                        <div class="div">Output balance: <input type="text" id="output" name="fname"
+                                class="bg-gray-300"></div>
+                        <div class="div">Input Currency: 
+                            <select id="Currency">
+                                <option value="usd">USD</option>
+                                <option value="baht">BAHT</option>
+                            </select>
+                            <button class="bg-gray-300">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-8">
+                <div class="div">
+                    <div class="text-3xl font-bold">Balance information</div>
+                    <img src="R.jpg" width="200" height="200">
+                </div>
+                    <div class="flex flex-col justify-center gap-4">
+                        <div class="div">Current account balance:<input type="text" id="input" name="fname" class="bg-gray-300">
+                        </div>
+                        <div class="div">Current cash balance: <input type="text" id="output" name="fname"
+                                class="bg-gray-300"></div>
+                        <div class="">
+                            <button class="bg-gray-300">Change</button>
+                        </div>
+                </div>
+        </div>
+    </div>
 </body>
+
 </html>
