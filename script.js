@@ -1,7 +1,7 @@
 // Helper: write to output box
 function showOutput(message) {
   let box = document.getElementById("outputBox");
-  box.innerHTML += message + "<br>";
+  box.innerHTML += message + ", ";
   box.scrollTop = box.scrollHeight; // auto scroll down
 }
 
