@@ -2,86 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>itf simple bank</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITF Simple Bank</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <div class="flex justify-between bg-blue-500 text-white">
-        <div class="text-2xl">
-            68070180
-        </div>
-        <div class="text-4xl">
-            ITF WEBSITE
-        </div>
-        <div class="text-2xl">
-            Week14
-        </div>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <div class="flex justify-between bg-blue-500 text-white p-4">
+    <div class="text-2xl">68070180</div>
+    <div class="text-4xl font-bold">ITF WEBSITE</div>
+    <div class="text-2xl">Week14</div>
+  </div>
+
+  <div class="flex flex-col justify-center items-center p-12">
+    <!-- class="flex flex-col gap-8" Title -->
+    <div class="flex gap-8 items-center mt-12">
+      <img src="Adore.png" width="200" height="200" class="rounded-xl shadow">
+      <div class="flex flex-col">
+        <div class="text-2xl font-bold">ITF SIMPLE BANK</div>
+        <div>Welcome to my First HTML + CSS + JS website!</div>
+      </div>
     </div>
-    <div class="flex flex-col justify-center items-center">
-        <div class="flex gap-8 items-center mt-12">
-            <img src="R.jpg" width="200" height="200">
-            <div class="flex flex-col">
-                <div class="div">ITF SIMPLE BANK</div>
-                <div class="div">WElcome to my First HTML + CSS + JS websote!</div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-24">
 
-            <div class="flex gap-8 mt-8">
-                <div class="div">
-                    <div class="text-3xl font-bold ">Account Overeview</div>
-                    <img src="R.jpg" width="200" height="200">
-                </div>
-
-                <div class="flex flex-col justify-center">
-                    Account information
-                    <div class="div">Name : Sontud Choakitiwut
-                        <div class="div">Type : Savings Account</div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex gap-8 mt-8">
-                <div class="div">
-                    <div class="text-3xl font-bold">Financial Tools</div>
-                    <img src="R.jpg" width="200" height="200">
-                </div>
-                <div class="flex flex-col justify-center">
-                    Currency Converter
-                    <div class="flex flex-col gap-4">
-                        <div class="div">input balnace:<input type="text" id="input" name="fname" class="bg-gray-300">
-                        </div>
-                        <div class="div">Output balance: <input type="text" id="output" name="fname"
-                                class="bg-gray-300"></div>
-                        <div class="div">Input Currency: 
-                            <select id="Currency">
-                                <option value="usd">USD</option>
-                                <option value="baht">BAHT</option>
-                            </select>
-                            <button class="bg-gray-300">Convert</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex gap-8">
-                <div class="div">
-                    <div class="text-3xl font-bold">Balance information</div>
-                    <img src="R.jpg" width="200" height="200">
-                </div>
-                    <div class="flex flex-col justify-center gap-4">
-                        <div class="div">Current account balance:<input type="text" id="input" name="fname" class="bg-gray-300">
-                        </div>
-                        <div class="div">Current cash balance: <input type="text" id="output" name="fname"
-                                class="bg-gray-300"></div>
-                        <div class="">
-                            <button class="bg-gray-300">Change</button>
-                        </div>
-                </div>
-        </div>
+    <!-- Output Box -->
+    <div class="mt-10 w-2/3">
+      <div id="outputBox" class="bg-gray-200 text-black p-4 rounded-lg min-h-[120px] shadow-inner overflow-y-auto">
+        Output messages will appear here...
+      </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24 mt-12 justify-center items-start">
+
+      <!-- Account Overview -->
+      <div class="flex gap-8 mt-8">
+        <div class="flex flex-col gap-8">
+          <div class="text-3xl font-bold">Account Overview</div>
+          <img src="user.png" width="200" height="200">
+        </div>
+        <div class="flex flex-col justify-center">
+          <div class="font-semibold">Account Information</div>
+          <div>Name : Sontud Choakitiwut</div>
+          <div>Type : Savings Account</div>
+        </div>
+      </div>
+
+      <!-- Financial Tools -->
+      <div class="flex gap-8 mt-8">
+        <div class="flex flex-col gap-8">
+          <div class="text-3xl font-bold">Financial Tools</div>
+          <img src="coins.png" width="200" height="200">
+        </div>
+        <div class="flex flex-col justify-center">
+          <div class="font-semibold mb-2">Currency Converter</div>
+          <div class="flex flex-col gap-4">
+            <div>Input balance:
+              <input type="number" id="inputBalance" class="bg-gray-300 p-1 rounded">
+            </div>
+            <div>Output balance:
+              <input type="text" id="outputBalance" class="bg-gray-300 p-1 rounded" readonly>
+            </div>
+            <div>Input Currency:
+              <select id="inputCurrency" class="bg-gray-300 p-1 rounded">
+                <option value="USD">USD</option>
+                <option value="THB">THB</option>
+              </select>
+              <button onclick="convertCurrency()" class="bg-blue-400 hover:bg-blue-500 text-white px-2 py-1 rounded">Convert</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Balance Information -->
+      <div class="flex gap-8">
+        <div class="flex flex-col gap-8">
+          <div class="text-3xl font-bold">Balance Information</div>
+          <img src="briefcase.png" width="200" height="200">
+        </div>
+        <div class="flex flex-col justify-center gap-4">
+          <div>Current account balance:
+            <input type="number" id="accountBalance" value="1000" class="bg-gray-300 p-1 rounded">
+          </div>
+          <div>Current cash balance:
+            <input type="number" id="cashBalance" value="1000" class="bg-gray-300 p-1 rounded">
+          </div>
+          <div>
+            <button onclick="updateBalance()" class="bg-green-400 hover:bg-green-500 px-2 py-1 rounded">Change</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bank Operation -->
+      <div class="flex gap-8">
+        <div class="flex flex-col gap-8">
+          <div class="text-3xl font-bold">Bank Operation</div>
+          <img src="toolbox.png" width="200" height="200">
+        </div>
+        <div class="flex flex-col justify-center gap-4">
+          <div>Amount:
+            <input type="number" id="operationAmount" class="bg-gray-300 p-1 rounded">
+          </div>
+          <div>
+            <select id="operationType" class="bg-gray-300 p-1 rounded">
+              <option value="deposit">Deposit</option>
+              <option value="withdraw">Withdraw</option>
+            </select>
+          </div>
+          <div>
+            <button onclick="performOperation()" class="bg-green-400 hover:bg-green-500 px-3 py-1 rounded">Submit</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
 </body>
-
 </html>
