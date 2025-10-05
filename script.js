@@ -1,7 +1,7 @@
 // Helper: write to output box
 function showOutput(message) {
   let box = document.getElementById("outputBox");
-  box.innerHTML += message + ", ";
+  box.innerHTML += message + "\n";
   box.scrollTop = box.scrollHeight; // auto scroll down
 }
 
@@ -55,7 +55,7 @@ function deposit() {
 
   account += amount;
   document.getElementById("accountBalance").value = account;
-  showOutput("📥 Deposited " + amount + " → New account balance: " + account);
+  showOutput("Deposited " + amount + " → New account balance: " + account);
 }
 
 function withdraw() {
@@ -75,4 +75,17 @@ function withdraw() {
   account -= amount;
   document.getElementById("accountBalance").value = account;
   showOutput("Withdraw " + amount + " → New account balance: " + account);
+}
+
+// Choose and perform operation
+function performOperation() {
+  let type = document.getElementById("operationType").value;
+
+  if (type === "deposit") {
+    deposit();
+  } else if (type === "withdraw") {
+    withdraw();
+  } else {
+    showOutput("❌ Invalid operation type");
+  }
 }
