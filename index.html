@@ -60,12 +60,17 @@
         <div class="flex flex-col justify-center">
           <div class="font-semibold mb-2">Currency Converter</div>
           <div class="flex flex-col gap-4">
+            <!-- Input Balance -->
             <div>Input balance:
               <input type="number" id="inputBalance" class="bg-gray-300 p-1 rounded">
             </div>
+
+            <!-- Output Balance -->
             <div>Output balance:
               <input type="text" id="outputBalance" class="bg-gray-300 p-1 rounded" readonly>
             </div>
+
+            <!-- Input Currency -->
             <div>Input Currency:
               <select id="inputCurrency" class="bg-gray-300 p-1 rounded">
                 <option value="USD">USD</option>
@@ -78,49 +83,50 @@
         </div>
       </div>
 
-      <!-- Balance Information -->
-      <div class="flex gap-8">
-        <div class="flex flex-col gap-8">
-          <div class="text-3xl font-bold">Balance Information</div>
-          <img src="briefcase.png" width="200" height="200">
-        </div>
-        <div class="flex flex-col justify-center gap-4">
-          <div>Current account balance:
-            <input type="number" id="accountBalance" value="1000" class="bg-gray-300 p-1 rounded">
-          </div>
-          <div>Current cash balance:
-            <input type="number" id="cashBalance" value="1000" class="bg-gray-300 p-1 rounded">
-          </div>
-          <div>
-            <button onclick="updateBalance()" class="bg-green-400 hover:bg-green-500 px-2 py-1 rounded">Change</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bank Operation -->
-      <div class="flex gap-8">
-        <div class="flex flex-col gap-8">
-          <div class="text-3xl font-bold">Bank Operation</div>
-          <img src="toolbox.png" width="200" height="200">
-        </div>
-        <div class="flex flex-col justify-center gap-4">
-          <div>Amount:
-            <input type="number" id="operationAmount" class="bg-gray-300 p-1 rounded">
-          </div>
-          <div>
-            <select id="operationType" class="bg-gray-300 p-1 rounded">
-              <option value="deposit">Deposit</option>
-              <option value="withdraw">Withdraw</option>
-            </select>
-          </div>
-          <div>
-            <button onclick="performOperation()"
-              class="bg-green-400 hover:bg-green-500 px-3 py-1 rounded">Submit</button>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Balance Information -->
+    <div class="flex gap-8">
+      <div class="flex flex-col gap-8">
+        <div class="text-3xl font-bold">Balance Information</div>
+        <img src="briefcase.png" width="200" height="200">
+      </div>
+      <div class="flex flex-col justify-center gap-4">
+        <div>Current account balance:
+          <input type="number" id="accountBalance" value="1000" class="bg-gray-300 p-1 rounded">
+        </div>
+        <div>Current cash balance:
+          <input type="number" id="cashBalance" value="1000" class="bg-gray-300 p-1 rounded">
+        </div>
+        <div>
+          <button onclick="updateBalance()" class="bg-green-400 hover:bg-green-500 px-2 py-1 rounded">Change</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bank Operation -->
+    <div class="flex gap-8">
+      <div class="flex flex-col gap-8">
+        <div class="text-3xl font-bold">Bank Operation</div>
+        <img src="toolbox.png" width="200" height="200">
+      </div>
+      <div class="flex flex-col justify-center gap-4">
+        <div>Amount:
+          <input type="number" id="operationAmount" class="bg-gray-300 p-1 rounded">
+        </div>
+        <div>
+          <select id="operationType" class="bg-gray-300 p-1 rounded">
+            <option value="deposit">Deposit</option>
+            <option value="withdraw">Withdraw</option>
+          </select>
+        </div>
+        <div>
+          <button onclick="performOperation()" class="bg-green-400 hover:bg-green-500 px-3 py-1 rounded">Submit</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
   </div>
 
   <!-- External Script -->
